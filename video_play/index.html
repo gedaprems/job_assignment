@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Play</title>
+</head>
+<body >
+    <button id="play" style="height: 100px; margin-top: 0px; float: inline-end;" onclick="play()">Play</button>
+    <video id="vid1" height="720" width="1289" crossorigin="anonymous">
+        <track id="text1" label="English" kind="subtitles" src="" srclang="en">
+    </video>
+    
+
+    <script>
+
+        var text = document.getElementById("text1");
+        var video = document.getElementById("vid1");
+        var playBtn = document.getElementById("play");
+
+        // playBtn.style.height = "720px";
+
+        video.setAttribute("src","video.mp4");
+        // https://res.cloudinary.com/dzuf7rqkh/video/upload/v1704633232/cpphryetrluarptz6wf6.mp4
+    
+
+        text.setAttribute("src","subtitle.vtt");
+        video.textTracks[0].mode = 'showing';
+
+        function play(){
+            video.play();
+        }
+
+    </script>
+</body>
+</html>
